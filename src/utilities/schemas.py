@@ -6,4 +6,4 @@ GET_BOOKING_SCHEMA = {'firstname': {'type': 'string'},
                                        'schema':
                                            {'checkin': {'type': 'string'},
                                             'checkout': {'type': 'string'}}},
-                      'additionalneeds': {'type': 'boolean'}}
+                      'additionalneeds': {'type': 'string'}}
