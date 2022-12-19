@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} initiated regression tests
 on:
   push:
     branches: ["main"]
-  pull-request:
+  pull_request:
     branches: ["main"]
 jobs:
   build:
