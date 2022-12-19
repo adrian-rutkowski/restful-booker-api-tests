@@ -1,0 +1,24 @@
+name: Regression tests
+run-name: ${{ github.actor }} initiated regression tests
+on:
+  push:
+    branches: ["main"]
+  pull-request:
+    branches: ["main"]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: |
+          pytest -v -s -m regression --alluredir="src/tests/reports/allure_raw"
