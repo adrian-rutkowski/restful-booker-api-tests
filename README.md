@@ -15,3 +15,9 @@ Features:
 - cerberus schema validation
 - triggers github actions on push to main
 - flake8 linting check
+
+To run the tests:
+
+`pytest -v -s -m regression --alluredir="src/tests/reports/allure_raw"`
+
+`allure serve "src/tests/reports/allure_raw"`
