@@ -15,8 +15,9 @@ Features:
 - cerberus schema validation
 - triggers github actions on push to main
 - flake8 linting check
+- dockerfile to create an image that will run the regression tests in CI/CD
 
-To run the tests:
+To run the tests locally and generate a report:
 
 `pytest -v -s -m regression --alluredir="src/tests/reports/allure_raw"`
 
