@@ -2,9 +2,11 @@ FROM python:3-alpine
 
 RUN apk update
 
-COPY . /container
 WORKDIR /container
 
-RUN pip install -r requirements.txt
+# Copy and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-CMD pytest -v -s -m regression
+# Copy the rest of the code
+COPY . /container
